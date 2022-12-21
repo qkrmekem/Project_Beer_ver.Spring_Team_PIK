@@ -1,0 +1,415 @@
+.flex-center-pik{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.flex-center-pik{
+    display: flex;
+    justify-content: space-between;
+}
+.border-line{
+    width: 80%;
+    border-bottom: solid 1px rgb(102, 100, 100);
+    position: relative;
+    text-align: center;
+    top: 1em;
+    margin: 0 0 3em 0;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: inherit;
+
+}
+/* search start */
+.serch-top-pik{
+    width: 100%;
+}
+.search-img-pik{
+	width :100%;
+	height:250px;
+	background: url('/assets/img/beer/searchbar.jpeg') no-repeat center;
+	background-size: 1519.2px;
+}
+.search-group-pik{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.search-pik{
+    margin-left: 100px;
+}
+.search-bar-pik{
+    width:400px;
+    margin-left: 120px;
+}
+.input-group-pik{
+    width:200px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.serch-bt-pik button{
+    margin-top: 30px;
+    margin-left: 40px;
+}
+.select-bar-pik{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.arrow-mt-pik{
+    margin-top: 120px;
+    cursor: pointer;
+}
+.arrow-mt-pik:hover{
+    background-color: rgba(226, 228, 228, 0.342);
+    border-radius: 10px;
+}
+.img-beer-pik{
+	width: 306px;
+	height: 250px;
+}
+/* search end */
+
+/* register start */
+.form-s-pik{
+	margin-right : 2px;
+	width:80%;
+}
+.form-bt-pik{
+	margin: 0 5px;
+	width : 17% !important;
+	height : 40px;
+	font-size: 12px;
+	padding:0;
+	background-color: #D52349;
+	border: 0;
+}
+.form-pik{
+    background-color: #f4f5f9;
+    color : #4f5d77;
+    font-weight: 100;
+}
+.btnR-pik{
+    background-color: #D52349;
+    border: none;
+    margin-right: 10px;
+}
+.btn-pik{
+    border: none;
+    margin-left: 10px;
+}
+.btn-pik:hover{
+    background-color: #d52349bb;
+}
+.snsjoin-bt-pik{
+	background-color:#fff;
+	color : #4f5d77;
+    border-radius: 10px;
+}
+.snsjoin-bt-pik:hover{
+	background-color:#4f5d7770;
+}
+/* register end */
+
+/* recommend start */
+
+.rec-img-pik{
+	width :100%;
+	height:350px;
+	background: url('/assets/img/beer/menubar.jpeg') no-repeat;
+	background-size: 1519.2px;
+}
+.rec-h1-pik{
+	width: 700px;
+    height: 100px;
+	font-size: 35px;
+	color : #f0f0f7;
+    text-align: center;
+	position:relative;
+	top : 20%;
+	left :28%;
+	/* animation : slide 4s ease-out; */
+}
+@keyframes slide {
+	from{
+		left:-100px;
+		opacity:0;
+	}
+	to{
+		left:1000px;
+		opacity:1;
+	}
+}
+.list-pik{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+}
+/* recommend end */
+
+/* login start */
+.loginbtnR-pik{
+    background-color: #D52349;
+    border: none;
+    border-radius: 10px;
+}
+.loginbtn-pik{
+    border-radius: 10px;
+}
+.loginbtn-pik:hover{
+    background-color: #d52349bb;
+}
+/* login end */
+
+/* review start */
+.review-img-pik{
+	width :100%;
+	height:200px;
+	background: url('/assets/img/beer/boardbar.jpeg') no-repeat center;
+	background-size: 1519.2px;
+}
+.img-review-pik{
+	width: 184px;
+	height: 184px;
+}
+.bestrev-box-pik{
+    width: 176px;
+    height: 267px;
+}
+.table-review-pik {
+    width: 80% !important;
+}
+.th1-pik{
+    width: 15%; 
+    text-align: center;    
+}
+.th2-pik{
+    width: 45%; 
+    padding-left: 75px;  
+}
+.th3-pik{
+    width: 15%; 
+    text-align: center;    
+}
+.th5-pik{
+    width: 15%; 
+    text-align: center;    
+}
+.th5-pik{
+    width: 10%; 
+    text-align: center;    
+}
+
+.bt-right-pik{
+    float: right;
+    margin-right: 20px;
+}
+/* review end */
+
+/* articleView start*/
+.div-artview-pik{
+	width:80%;
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: solid 1px rgb(102, 100, 100);
+    border-top: solid 1px rgb(102, 100, 100);
+    padding: 10px 0;
+    cursor: pointer;
+}
+.artview-title-pik{
+	text-align: center;
+	margin-bottom:17px;
+}
+.artview-pik{
+	width:80%;
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+	margin:0;
+	border-bottom: solid 1px rgb(102, 100, 100);
+	padding: 10px 0;
+}
+.artview-content-pik{
+	width:100%;
+	text-align: center; 
+	margin:30px 0;
+}
+.artview-side-pik{
+	width:80%;
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top:15px;
+	
+}
+.artview-btS-pik{
+	width:40%;
+	display: flex;
+    justify-content: flex-start;
+	
+}
+.artview-btE-pik{
+	width:40%;
+	display: flex;
+    justify-content: flex-end;
+	
+}
+.artview-btS-pik button{
+	margin: 15px 10px;
+}
+.artview-btE-pik button{
+	margin: 15px 10px;
+}
+/* articleView 댓글 관련 */
+.commentbox-pik{
+	width:80%;
+	display: flex;
+	margin-top:25px;
+	border-bottom: solid 1px rgb(102, 100, 100);
+}
+.commentwriter-pik{
+	width:100%;
+	box-sizing: border-box;
+	margin-bottom:25px;
+}
+.comment-inbox-pik{
+	width:100%;
+	min-height: 100px;
+	display: flex;
+    justify-content: center;
+}
+.comment-inbox-text-pik{
+	width: 100%;
+	min-height: 100px;
+}
+
+/* articleView end*/
+
+/* articleWrite start*/
+.viewbox-pik{
+	width: 80%;
+	
+	border-radius: 2%; 
+	padding: 20px 20px 20px 20px;
+
+}
+.artwrite-contentbox-pik{
+	width: 100%;
+}
+.artwrite-header-pik{
+	margin-bottom: 12px; 
+	padding: 10px 20px; 
+	border-bottom: 1px solid #ccc;
+}
+.artwrite-title-pik iput{
+	font-size: 1.5em; 
+	width: 100%; 
+	padding: 0; 
+	margin-bottom: 15px;
+}
+.artfile-pik{
+	
+	margin-bottom: 10px;
+}
+.upload-name-pik{
+	display: inline-block;
+    height: 30px;
+    padding: 1px 10px;
+    vertical-align: middle;
+    border: 1px solid #dddddd;
+    width: 30%;
+    color: #999999;
+    margin:0px 10px 12px 20px;
+}
+.label-for-file {
+    display: inline-block;
+    padding: 1px 10px;
+    color: #fff;
+    vertical-align: middle;
+    background-color: #ccc;
+    cursor: pointer;
+    height: 30px;
+    margin:0px 10px 12px 10px ;
+}
+.articlefile-pik input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}
+.article-viewer-pik{
+	padding: 0 20px; 
+	min-height: 100px;
+}
+.hidden-pik{
+	display: none;
+} 
+.artwrite-bt-pik{
+	width:95%;
+	display: flex;
+    justify-content: flex-end;
+}
+.artwrite-bt-pik button{
+	margin: 15px 10px;
+}
+/* articleWrite end*/
+
+/* notice start */
+.notice-img-pik{
+	width :100%;
+	height:200px;
+	background: url('/assets/img/beer/noticebar.jpg') no-repeat center;
+	background-size: 1519.2px;
+}
+.noticetop-pik{
+	width:80%;
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: solid 1px rgb(102, 100, 100);
+    padding: 10px 0;
+
+}
+.div-notice-pik{
+	width:80%;
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: solid 1px rgb(102, 100, 100);
+    padding: 10px 0;
+    cursor: pointer;
+}
+.div-notice-pik:hover{
+	background-color: rgba(179, 174, 174, 0.212);
+}
+.notice-pik{
+	width:80%;
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+	margin:0;
+	border-bottom: solid 1px rgb(102, 100, 100);
+	padding: 10px 0;
+}
+.notice-content-pik{
+	text-align: center; 
+}
+.notice-bt-pik{
+	width:80%;
+	display: flex;
+    justify-content: flex-end;
+	
+}
+.notice-bt-pik button{
+	margin: 15px 10px;
+}
+.text-center-pik{
+	text-align: center;
+}
+.bt-right-pik{
+	margin : 15px 10px;
+}
+/* notice end */

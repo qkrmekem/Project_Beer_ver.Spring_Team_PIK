@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ko" xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="~{/layout/layout::setContent(~{this::content})}">
+	<th:block th:fragment="content">
+<!-- 여기서부터 작성 -->
+
+
+		<section class="page-section bg-light flex-center-pik" id="portfolio">
+            <div class="review-img-pik"></div>
+            <!-- best review list -->
+            <div class="container list-pik col-lg-10">
+                <div class ="border-line col-lg-10"><h2>Best Review</h2></div>
+                <div class="row flex-center-pik">
+                    <!-- for 문  구간 -->
+                    <div class="col-lg-2 col-sm-6 mb-4  bestrev-box-pik">
+                        <!-- Portfolio item 1-->
+                        <!-- 변수 받아 쓰기 -->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" href="#">
+                                <img class="img-fluid img-review-pik" src="https://cdn.imweb.me/thumbnail/20201216/87d869f50bd53.jpeg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption best-box-pik">
+                                <div class="portfolio-caption-subheading text-muted">Best Review</div>
+                                <div class="portfolio-caption-heading  ">엑스트라</div>   
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-6 mb-4 bestrev-box-pik">
+                        <!-- Portfolio item 2-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" href="#">
+                                <img class="img-fluid img-review-pik" src="https://cdn.belocal.kr/news/photo/202102/1516738_6841.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-subheading text-muted">Best Review</div>
+                                <div class="portfolio-caption-heading">Explore</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-6 mb-4 bestrev-box-pik">
+                        <!-- Portfolio item 3-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" href="#">
+                                <img class="img-fluid img-review-pik" src="https://assabeer.com/web/product/small/b_147.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-subheading text-muted">Best Review</div>
+                                <div class="portfolio-caption-heading">Finish</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-6 mb-4 bestrev-box-pik">
+                        <!-- Portfolio item 3-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" href="#portfolioModal3">
+                                <img class="img-fluid img-review-pik" src="https://assabeer.com/web/product/small/b_147.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-subheading text-muted">Best Review</div>
+                                <div class="portfolio-caption-heading">Finish</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-6 mb-4 bestrev-box-pik">
+                        <!-- Portfolio item 3-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" href="#">
+                                <img class="img-fluid img-review-pik" src="https://assabeer.com/web/product/small/b_147.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-subheading text-muted">Best Review</div>
+                                <div class="portfolio-caption-heading">Finish</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- review list  -->
+            <div class="container list-pik col-lg-10">
+                <div class ="border-line col-lg-10"><h2>Beer Review</h2></div>
+                <table class=" table table-hover table-review-pik ">
+                    <thead>
+                        <tr class ="col-lg-10">
+                            <th class="th1-pik">번호</th>
+                            <th class="th2-pik">제목</th>
+                            <th class="th3-pik">작성자</th>
+                            <th class="th4-pik">게시일</th>
+                            <th class="th5-pik">조회수</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--  for 문 -->
+                        <tr class ="col-lg-10">
+                            <td class="th1-pik">1</td>
+                            <td class="th2-pik">겨울잠</td>
+                            <td class="th3-pik">구르미랑</td>
+                            <td class="th4-pik">2022-12-18</td>
+                            <td class="th5-pik">0</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="col-lg-10 ">
+                    <button  class=" btn btn-outline-warning bt-right-pik">글쓰기</button>
+                </div>
+            </div>
+        </section>
+    
+    
+    
+<!-- 여기까지 입력 -->
+	</th:block>
+</th:block>
+</html>

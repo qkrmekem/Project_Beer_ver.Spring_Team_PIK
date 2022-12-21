@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ko" xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="~{/layout/layout::setContent(~{this::content})}">
+	<th:block th:fragment="content">
+<!-- 여기서부터 작성 -->
+
+		<section class="page-section bg-light flex-center-pik" id="portfolio">
+            <div class="notice-img-pik"></div>
+            <!-- best review list -->
+            <div class="container list-pik col-lg-10">
+                <div class ="border-line col-lg-10"><h2>Beer Notice</h2></div>
+                
+                <div class ="noticetop-pik">
+                    <div class="col-lg-1 text-center-pik">번호</div>
+                    <div class="col-lg-4">제목</div>
+                    <div class="col-lg-2 text-center-pik">작성자</div>
+                    <div class="col-lg-2 text-center-pik">게시일</div>
+                    <div class="col-lg-1 text-center-pik">조회수</div>
+                </div>
+                <!--  for 문 -->
+                <div class ="div-notice-pik" >
+                    <div class="col-lg-1 text-center-pik">1</div>
+                    <div class="col-lg-4">겨울잠</div>
+                    <div class="col-lg-2 text-center-pik">구르미랑</div>
+                    <div class="col-lg-2 text-center-pik">2022-12-18</div>
+                    <div class="col-lg-1 text-center-pik">0</div>
+                </div>
+                <div class ="col-lg-10 notice-pik" >
+                 	<div class="col-lg-10 notice-content-pik">
+                 	때 이른 봄 몇 송이 꺾어다
+					너의 방 문 앞에 두었어
+					긴 잠 실컷 자고 나오면
+					그때쯤엔 예쁘게 피어 있겠다
+					별 띄운 여름 한 컵 따라다
+					너의 머리맡에 두었어
+					금세 다 녹아버릴 텐데
+					너는 아직 혼자 쉬고 싶은가 봐
+					너 없이 보는 첫 봄이 여름이
+					괜히 왜 이렇게 예쁘니
+					다 가기 전에 널 보여줘야 하는데
+					음 꼭 봐야 하는데
+					내게 기대어 조각잠을 자던
+					그 모습 그대로 잠들었구나
+					무슨 꿈을 꾸니
+					깨어나면 이야기해 줄 거지
+					언제나의 아침처럼 음
+					빼곡한 가을 한 장 접어다
+					너의 우체통에 넣었어
+					가장 좋았던 문장 아래 밑줄 그어
+					나 만나면 읽어줄래... 
+                 	</div>
+                 	<!-- 버튼 자격있는 자만 보이도록 -->
+                 	<div class="notice-bt-pik">
+                 		<button type="button" class="btn btn-outline-success">수정</button>
+                 		<button type="button" class="btn btn-outline-danger">삭제</button>
+                 	</div>
+                 </div>
+              
+                <!-- if문으로 일반회원은 버튼 안 보이도록 -->
+                <div class="col-lg-10 ">
+                    <button type="button" class=" btn btn-outline-warning bt-right-pik">글쓰기</button>
+                </div>
+	        	
+            </div>
+        </section>
+    
+<!-- 여기까지 입력 -->
+	</th:block>
+</th:block>
+
+</html>

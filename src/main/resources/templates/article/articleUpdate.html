@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ko" xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="~{/layout/layout::setContent(~{this::content})}">
+	<th:block th:fragment="content">
+<!-- 여기서부터 작성 -->
+	<script type="text/javascript">
+	$(function () {
+		$("#b_file").on('change',function(){
+	  	 console.log($("#b_file").val());
+	  	  var fileName = $("#b_file").val();
+	  	  console.log(fileName);
+	  	  $(".upload-name-pik").val(fileName);
+	  	});
+	});
+	</script>
+	
+		<section class="page-section bg-light flex-center-pik" id="portfolio">
+            <div class="review-img-pik"></div>
+            <!-- best review list -->
+            <div class="container list-pik col-lg-10">
+                <div class ="artview-title-pik col-lg-10"><h2>Beer Review</h2></div>
+                	
+               	<div class="viewbox-pik">
+					<div class="artwrite-contentbox-pik">
+						<form action="" method="post" enctype="multipart/form-data">
+							<div class="artwrite-header-pik">
+								<div class="artwrite-title-pik" style="font-size: 13px;">										
+									<input type="text" name="b_title" class="form-control"/>
+								</div>
+							</div>
+							<div class="artwrite-container-pik">
+								<div class="artfile-pik">
+									<input type="text"class="upload-name-pik form-control " value="첨부파일" placeholder="첨부파일" >
+									<label for="b_file" class="label-for-file">파일찾기</label>
+									<!-- 아래 input이 파일관련 input입니다!!-->									
+									<input type="file" id="b_file" name="b_file"class="hidden-pik" />
+								</div>
+								<div class="article_viewer_pik">
+									<textarea rows="20" name="b_content" class ="form-control"></textarea>
+								</div>
+							</div>
+							<div class="artwrite-bt-pik">
+			               		<button type="button" class="btn btn-outline-success">수정</button>
+			               		<button type="button" class="btn btn-outline-dark">목록</button>
+			               	</div>
+						</form>
+					</div>
+				</div>
+            </div>
+        </section>
+    
+<!-- 여기까지 입력 -->
+	</th:block>
+</th:block>
+
+</html>

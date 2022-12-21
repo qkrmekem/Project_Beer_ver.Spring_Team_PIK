@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ko" xmlns:th="http://www.thymeleaf.org">	
+<th:block th:replace="~{/layout/layout::setContent(~{this::content})}">
+	<th:block th:fragment="content">
+<!-- 여기서부터 작성 -->
+	<script>
+		$(document).ready(function(){
+			if("${fvo.aroma_seq}"=="1"){
+				$("#favorite-beeraroma").text("Aroma : 에일");
+			}else if("${fvo.aroma_seq}"=="2"){
+				$("#favorite-beeraroma").text("Aroma : 라거");
+			}else if("${fvo.aroma_seq}"=="3"){
+				$("#favorite-beeraroma").text("Aroma : 밀맥주");
+			}else if("${fvo.aroma_seq}"=="4"){
+				$("#favorite-beeraroma").text("Aroma : 필스너");
+			}else if("${fvo.aroma_seq}"=="5"){
+				$("#favorite-beeraroma").text("Aroma : 흑맥주");
+			}else if("${fvo.aroma_seq}"=="6"){
+				$("#favorite-beeraroma").text("Aroma : 기타");
+			}
+		
+			if("${fvo.from_seq}"=="1"){
+				$("#favorite-from").text("From : 국내");
+			}else if("${fvo.from_seq}"=="2"){
+				$("#favorite-from").text("From : 해외");
+			}
+		
+			if("${fvo.taste_seq}"=="1"){
+				$("#favorite-taste").text("Taste : Sweet");
+			}else if("${fvo.taste_seq}"=="2"){
+				$("#favorite-taste").text("Taste : Dry");
+			}else if("${fvo.taste_seq}"=="3"){
+				$("#favorite-taste").text("Taste : Soft");
+			}else if("${fvo.taste_seq}"=="4"){
+				$("#favorite-taste").text("Taste : Deep");
+			}else if("${fvo.taste_seq}"=="5"){
+				$("#favorite-taste").text("Taste : Bitter");
+			}
+			
+			if("${mvo.m_type}"=="n"){
+				$("#member-grade").text("일반회원");
+			}else if("${mvo.m_type}"=="v"){
+				$("#member-grade").text("VIP");
+			}
+		});
+
+		$(function () {
+			$("#m_profile").on('change',function(){
+		  		var fileName = $("#m_profile").val();
+		  		$(".upload-name-pik").val(fileName);
+			});
+		});
+		
+		
+    </script>
+    
+
+		<section class="page-section flex-center-pik" id="portfolio">
+			<div class="myPage-img-pik"></div>
+			<div class="container my-container-pik ">
+				<!-- 좌측 박스 -->
+				<div class="col-3 col-12-medium ">
+					<!-- 기본 사진 이름  -->		
+					<div class="outProfilImgBox">
+						<div class="profilImgBox">
+							<img id = "m_image" class="profileImg-pik" src="#" alt="" />	
+						</div>
+						<div class="boxBasic-pik boxBasic-profile-pik">
+							<button class="mypage-button-pik  edit-profile-button" onclick="editProfile()">수정</button>
+							<div class="say-hello">
+								<p class="p-write-pik">구르미랑님</p>
+								<p class="p-write-pik">반갑습니다</p>
+							</div>	
+						</div>
+						<div class="boxEdit-pik boxEdit-profile-pik" >
+							<form action="#" method="post" enctype="multipart/form-data">
+								<input id = "m_id" type="hidden" name="m_id" value="" />
+								<input class="upload-name-pik" value="첨부파일" placeholder="첨부파일">
+								<label for="m_profile" class="label-for-file">파일찾기</label>
+								<!-- 아래 input이 파일관련 input입니다!!-->	
+								<input type="File" id="m_profile" name="m_profile" >
+								<button type="submit" class="editpage-button-pik update-profile-button" onclick="updateProfile()">등록</button>
+								<button type="button" class="back-button-pik editpage-button-profile" onclick="editClose()">취소</button>
+							</form>
+						</div>
+					</div>					
+					<!-- 댓글 게시글 검색기능  -->
+					<div>
+						<p class="p-write-pik">최근 내가 쓴 글</p>
+						<div class="box-latestReAl">
+							<!-- if문 for문 처리 시작 -->
+							<div class="inbox-latestReAl"><a class="latestReAl" href="#">최근 게시글</a></div>
+							<div class="inbox-latestReAl">게시글 없음</div>
+							<!-- if문 for문 처리 완료 -->
+						</div>
+					</div>
+					<div>
+						<p class="p-write-pik">최근 내가 쓴 댓글</p>
+						<div class="box-latestReAl" >
+							<!-- if문 for문 처리 시작 -->
+							<div class="inbox-latestReAl"><a class="latestReAl"  href="#">최근 댓글</a></div>
+							<div class="inbox-latestReAl">댓글 없음</div>
+							<!-- if문 for문 처리 완료 -->
+						</div>
+					</div>
+				</div>
+				<!-- 공간 구획 -->
+				<div class="col-1 col-12-medium imp-medium"></div>
+				<!--계정관리-->
+				<div class="col-8 col-12-medium ">
+					<article class="box post mybox-pik">
+						<div>
+							<h3 class="h3-my-pik">계정관리</h3>
+							<p class="p-my-pik">기본정보</p>
+							<p class="p-small-my-pik"> 프로필 사진과 별명은 다른 사람이 볼 수 있습니다.</p>
+						</div>
+							
+						<div class="infoOutbox-pik">									
+							<!--별명 정보&수정-->
+							<div class="infoInbox-pik">
+								<div class="infoInboxLeft-pik">
+									별명
+								</div>
+								<div class="infoInboxRight-pik">
+									<div class="boxBasic-pik boxBasic-nic-pik">
+										<span id="nickname">구르미랑</span>
+										<button class="mypage-button-pik" onclick="editNickName()">수정</button>
+									</div>
+									<div class="boxEdit-pik boxEdit-nic-pik">
+										<input type="text" id="m_nickname" name="m_nickname" value="" class="inputInBox-pik">
+										<button type="button" class="editpage-button-pik" onclick="updateNickName()">등록</button>
+										<button type="button" class="back-button-pik" onclick="allClose()">취소</button>
+									</div>
+								</div>
+							</div>
+							<!--이메일 정보&수정-->
+							<div class="infoInbox-pik">
+								<div class="infoInboxLeft-pik">
+									이메일
+								</div>
+								<div class="infoInboxRight-pik">
+									<div class="boxBasic-pik boxBasic-email-pik">
+										<span id="email">e-mail</span>
+										<button class="mypage-button-pik" onclick="editEmail()">수정</button>
+									</div>
+									<div class="boxEdit-pik boxEdit-email-pik">
+										<input type="text" id="m_email" name="m_email" value="" class="inputInBox-pik">
+										<button type="button" class="editpage-button-pik" onclick="updateEmail()">등록</button>
+										<button type="button" class="back-button-pik"  onclick="allClose()">취소</button>
+									</div>
+								</div>
+							</div>
+							<!--비밀번호 정보&수정-->
+							<div class="infoInbox-pik">
+								<div class="infoInboxLeft-pik" >
+									비밀번호
+								</div>
+								<div class="infoInboxRight-pik">
+									<div class="boxBasic-pik boxBasic-pw-pik">
+										<span id="password">**********</span>
+										<button class="mypage-button-pik" onclick="editPassword()">수정</button>
+									</div>
+									<!--비밀번호 확인 부분-->
+									<div class="boxEdit-pik boxEdit-pw-pik">
+										<input type="password" id="pre_pw" name="pre_pw" placeholder="기존 비밀번호를 입력해 주세요" class="inputInBox-pik">
+										<div id="wrong-pw">기존 비밀번호가 틀렸습니다</div>
+										<input type="password" id="new_pw" name="new_pw" placeholder="새로운 비밀번호를 입력해 주세요" class="inputInBox-pik">
+										<div id="wrong-new-pw">새로운 비밀번호가 일치하지 않습니다</div>
+										<input type="password" id="check_pw" name="check_pw" placeholder="새로운 비밀번호를 다시 입력해 주세요" class="inputInBox-pik">
+										<button type="button" class="editpage-button-pik" onclick="updatePassword(패스워드변수받기)">등록</button>
+										<button type="button" class="back-button-pik" onclick="allClose()">취소</button>
+									</div>
+								</div>
+							</div>
+							<!--생년월일 정보&수정-->
+							<div class="infoInbox-pik">
+								<div class="infoInboxLeft-pik">
+									생년월일
+								</div>
+								<div class="infoInboxRight-pik">
+									<div class="boxBasic-pik boxBasic-birth-pik">
+										<span id="birthdate">2009-09-06</span>
+										<button class="mypage-button-pik" onclick="editBirthdate()">수정</button>
+									</div>
+									<div class="boxEdit-pik boxEdit-birth-pik">
+										<input type="date" id="m_birthdate" name="m_birthdate">
+										<button type="button" class="editpage-button-pik" onclick="updateBirthdate()">등록</button>
+										<button type="button" class="back-button-pik" onclick="allClose()">취소</button>									
+									</div>
+								</div>
+							</div>
+							<!-- 맥주 취향 정보 & 수정  -->
+							<div class="infoInbox-pik">
+								<div class="infoInboxLeft-pik">
+									맥주취향
+								</div>
+								<div class="infoInboxRight-pik">
+									<div class="boxBasic-pik boxBasic-favorite-pik">
+										<span class="pre-favorite" id="favorite-beeraroma"></span>
+										<span class="pre-favorite" id="favorite-from"></span>
+										<span class="pre-favorite" id="favorite-taste"></span>
+										<button class="mypage-button-pik" onclick="editFavorite()">수정</button>
+									</div>
+									<div class="boxEdit-pik boxEdit-favorite-pik">	
+										<div class="favorite-edit">
+											<span class="favorite-edit-font" id="aromaCheck" >좋아하는 향을 선택해주세요</span>
+											<h4 class="favorite-edit-h4"> Aroma  :</h4>
+											<select name="beer_aroma" id="beer_option1" class="beer-edit-select" >
+												<option selected> choose ▽  </option>
+												<option value= 1 >에일</option>
+												<option value= 2 >라거</option>												
+												<option value= 3 >밀맥주</option>
+												<option value= 4 >필스너</option>
+												<option value= 5 >흑맥주</option>												
+												<option value= 6 >기타</option>											
+											</select>												
+										</div>
+										<div class="favorite-edit">
+											<span class="favorite-edit-font" id="fromCheck" >선호하는 원산지를 선택해주세요</span>
+											<h4 class="favorite-edit-h4"> From	:</h4>
+											<select name="beer_from" id="beer_option2" class="beer-edit-select" >
+												<option selected> choose ▽  </option>
+												<option value= 1 >국내</option>
+												<option value= 2 >해외</option>													
+											</select>	
+										</div>								
+										<div class="favorite-edit">
+											<span class="favorite-edit-font" id="tasteCheck" >좋아하는 맛을 선택해주세요</span>
+											<h4 class="favorite-edit-h4"> Taste  :</h4>
+											<select name="beer_taste" id="beer_option3" class="beer-edit-select" >
+												<option selected> choose ▽  </option>
+												<option value= 1 >Sweet</option>
+												<option value= 2 >Dry</option>
+												<option value= 3 >Soft</option>
+												<option value= 4 >Deep</option>
+												<option value= 5 >Bitter</option>													
+											</select>
+										</div>
+										<div class="favorite-edit-button" >
+											<button type="button" class="editpage-button-pik" onclick="updateFavorite()">등록</button>
+											<button type="button" class="back-button-pik"  onclick="allClose()">취소</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--회원등급 정보&수정-->
+							<div class="infoInbox-pik">
+								<div class="infoInboxLeft-pik">
+									회원등급
+								</div>
+								<div class="infoInboxRight-pik">
+									<div class="boxBasic-pik boxBasic-grade-pik">
+										<form action="" method="get">
+											<span id="member-grade">일반회원</span>
+											<button type="button" class="mypage-button-pik">가입</button>
+										</form>
+										<!--버튼 클릭시 유료회원으로 전환 편의점 구독신청-->
+									</div>
+								</div>
+							</div>
+							<!--가입일 정보&수정-->
+							<div class="infoInbox-pik">
+								<div class="infoInboxLeft-pik">
+									가입일
+								</div>
+								<div class="infoInboxRight-pik">
+									<div class="boxBasic-pik boxBasic-joindate-pik">
+										2022-12-20
+									</div>
+								</div>
+							</div>
+						</div>
+							
+					</article>
+				</div>
+			</div>			
+		</section>
+    
+<script type="text/javascript">
+
+function allClose(){
+    $(".boxBasic-pik").css("display","block");
+    $(".boxEdit-pik").css("display","none");
+}
+function editNickName(){
+    //혹시 열린 창 닫기
+    allClose()
+    
+    //수정 부분 열기
+    $(".boxBasic-nic-pik").css("display","none");
+    $(".boxEdit-nic-pik").css("display","block");
+}
+function editEmail(){
+    allClose()
+
+    $(".boxBasic-email-pik").css("display","none");
+    $(".boxEdit-email-pik").css("display","block");
+}
+function editPassword(){
+    allClose()
+
+    $(".boxBasic-pw-pik").css("display","none");
+    $(".boxEdit-pw-pik").css("display","block");
+}
+function editBirthdate(){
+    allClose()
+
+    $(".boxBasic-birth-pik").css("display","none");
+    $(".boxEdit-birth-pik").css("display","block");
+}
+function editFavorite(){
+	allClose()
+
+    $(".boxBasic-favorite-pik").css("display","none");
+    $(".boxEdit-favorite-pik").css("display","block");
+	
+}
+function editProfile(){
+	allClose()
+	
+	$(".boxBasic-profile-pik").css("display","none");
+    $(".boxEdit-profile-pik").css("display","block");
+
+}
+function allClose(){
+    $(".boxBasic-pik").css("display","block");
+    $(".boxEdit-pik").css("display","none");
+}
+
+function updateNickName() {
+	
+	var m_nickname = $("#m_nickname").val();
+	
+	$.ajax({
+	
+		url :'myPageEdit',
+		type :"post",
+		data :{"update":"nickname","m_nickname":m_nickname},
+		success : function(){
+			$("#nickname").text( m_nickname);
+			 allClose();
+		},
+		error :function(){alert("error")}
+	});
+}
+
+function updateEmail() {
+	
+	var m_email = $("#m_email").val();
+	
+	$.ajax({
+		url :'myPageEdit',
+		type :"post",
+		data :{"update":"email","m_email":m_email},
+		success : function(){
+			$("#email").text(m_email);
+			 allClose();
+		},
+		error : function(){alert("error")}
+	});
+}
+
+function updatePassword(m_pw) {
+	var pw = `${m_pw}`;
+	var pre_pw = $("#pre_pw").val();
+	var new_pw = $("#new_pw").val();
+	var check_pw = $("#check_pw").val();
+	
+	if(pw == pre_pw){
+		$("#wrong-new-pw").css("display","none");
+		$("#wrong-pw").css("display","none");
+		
+		if(new_pw == check_pw){
+		
+			$.ajax({
+				url :'myPageEdit',
+				type :"post",
+				data :{"update":"pw","new_pw":new_pw},
+				success : function(){
+					$("#pre_pw").val("");
+					$("#new_pw").val("");
+					$("#check_pw").val("");		
+					 allClose()
+				},
+				error : function(){alert("error")}
+			});
+		}else{
+			$("#wrong-new-pw").css("display","block");
+		}
+	}else{
+		$("#wrong-pw").css("display","block");
+	}
+	
+	
+}
+function updateBirthdate() {
+	
+	var m_birthdate = $("#m_birthdate").val();
+	
+	$.ajax({
+		url :'myPageEdit',
+		type :"post",
+		data :{"update":"birth","m_birthdate":m_birthdate},
+		success :function(){
+			$("#birthdate").text(m_birthdate);
+			 allClose();
+		},
+		error :function(){alert("error")}
+	});
+}
+
+function updateFavorite() {
+	
+	var beer_aroma= $("#beer_option1").prop("selectedIndex");
+	var beer_from= $("#beer_option2").prop("selectedIndex");
+	var beer_taste= $("#beer_option3").prop("selectedIndex");
+	
+
+	if(beer_aroma>0 && beer_from>0 && beer_taste){
+	
+		 $.ajax({
+			url :'myPageEdit',
+			type :"post",
+			data :{"update":"favorite","beer_aroma":beer_aroma,"beer_from":beer_from,"beer_taste":beer_taste},
+			success :function(){
+				if(beer_aroma=="1"){
+					$("#favorite-beeraroma").text("Aroma : 에일");
+				}else if(beer_aroma=="2"){
+					$("#favorite-beeraroma").text("Aroma : 라거");
+				}else if(beer_aroma=="3"){
+					$("#favorite-beeraroma").text("Aroma : 밀맥주");
+				}else if(beer_aroma=="4"){
+					$("#favorite-beeraroma").text("Aroma : 필스너");
+				}else if(beer_aroma=="5"){
+					$("#favorite-beeraroma").text("Aroma : 흑맥주");
+				}else if(beer_aroma=="6"){
+					$("#favorite-beeraroma").text("Aroma : 기타");
+				}
+			
+				if(beer_from=="1"){
+					$("#favorite-from").text("From : 국내");
+				}else if(beer_from=="2"){
+					$("#favorite-from").text("From : 해외");
+				}
+			
+				if(beer_taste=="1"){
+					$("#favorite-taste").text("Taste : Sweet");
+				}else if(beer_taste=="2"){
+					$("#favorite-taste").text("Taste : Dry");
+				}else if(beer_taste=="3"){
+					$("#favorite-taste").text("Taste : Soft");
+				}else if(beer_taste=="4"){
+					$("#favorite-taste").text("Taste : Deep");
+				}else if(beer_taste=="5"){
+					$("#favorite-taste").text("Taste : Bitter");
+				}
+				 allClose()
+			},
+			error :function(){alert("error")}
+		});
+	
+	}
+
+}
+
+</script>
+    
+<!-- 여기까지 입력 -->
+	</th:block>
+</th:block>
+
+</html>
